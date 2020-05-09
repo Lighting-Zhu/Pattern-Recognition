@@ -1,0 +1,25 @@
+clc;
+close all;
+clear all;
+%% 生成数据
+randn('seed',2020);
+mu1 = [2 3];
+sigma1 = [0.5 0; 
+         0 0.5];
+data1 = mvnrnd(mu1,sigma1,300);
+
+randn('seed',2021);
+mu2 = [6 7];
+sigma2 = [0.5 0; 
+         0 0.5];
+data2 = mvnrnd(mu2,sigma2,300);
+
+randn('seed',2022);
+mu3 = [5 -5];
+sigma3 = [0.5 0; 
+         0 0.5];
+data3 = mvnrnd(mu3,sigma3,300);
+%% 
+figure(1),plot(data1(:,1),data1(:,2),'r+');hold on;
+plot(data2(:,1),data2(:,2),'b*');hold on;
+plot(data3(:,1),data3(:,2),'m^');hold on;
